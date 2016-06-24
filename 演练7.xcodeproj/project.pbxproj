@@ -13,6 +13,8 @@
 		F2539A341D1C3CAB00CDFF05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2539A321D1C3CAB00CDFF05 /* Main.storyboard */; };
 		F2539A361D1C3CAB00CDFF05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2539A351D1C3CAB00CDFF05 /* Assets.xcassets */; };
 		F2539A391D1C3CAB00CDFF05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2539A371D1C3CAB00CDFF05 /* LaunchScreen.storyboard */; };
+		F2F4C31A1D1D5FED005622A0 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2F4C3191D1D5FED005622A0 /* cities.plist */; };
+		F2F4C31D1D1D6377005622A0 /* HLProvince.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F4C31C1D1D6377005622A0 /* HLProvince.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		F2539A351D1C3CAB00CDFF05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2539A381D1C3CAB00CDFF05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2539A3A1D1C3CAB00CDFF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2F4C3191D1D5FED005622A0 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
+		F2F4C31B1D1D6377005622A0 /* HLProvince.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLProvince.h; sourceTree = "<group>"; };
+		F2F4C31C1D1D6377005622A0 /* HLProvince.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLProvince.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +67,10 @@
 				F2539A2D1D1C3CAB00CDFF05 /* AppDelegate.m */,
 				F2539A2F1D1C3CAB00CDFF05 /* ViewController.h */,
 				F2539A301D1C3CAB00CDFF05 /* ViewController.m */,
+				F2F4C31B1D1D6377005622A0 /* HLProvince.h */,
+				F2F4C31C1D1D6377005622A0 /* HLProvince.m */,
 				F2539A321D1C3CAB00CDFF05 /* Main.storyboard */,
+				F2F4C3191D1D5FED005622A0 /* cities.plist */,
 				F2539A351D1C3CAB00CDFF05 /* Assets.xcassets */,
 				F2539A371D1C3CAB00CDFF05 /* LaunchScreen.storyboard */,
 				F2539A3A1D1C3CAB00CDFF05 /* Info.plist */,
@@ -139,6 +147,7 @@
 				F2539A391D1C3CAB00CDFF05 /* LaunchScreen.storyboard in Resources */,
 				F2539A361D1C3CAB00CDFF05 /* Assets.xcassets in Resources */,
 				F2539A341D1C3CAB00CDFF05 /* Main.storyboard in Resources */,
+				F2F4C31A1D1D5FED005622A0 /* cities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2539A311D1C3CAB00CDFF05 /* ViewController.m in Sources */,
+				F2F4C31D1D1D6377005622A0 /* HLProvince.m in Sources */,
 				F2539A2E1D1C3CAB00CDFF05 /* AppDelegate.m in Sources */,
 				F2539A2B1D1C3CAB00CDFF05 /* main.m in Sources */,
 			);
@@ -302,6 +312,7 @@
 				F2539A3F1D1C3CAB00CDFF05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
