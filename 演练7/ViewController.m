@@ -57,6 +57,13 @@ static NSString *cellId = @"cellId";
 }
 
 
+//模型设置完毕之后加载数据
+- (void)loadPlistData{
+    
+
+}
+
+
 - (void)setupUI{
     
     UITableView *tv = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
