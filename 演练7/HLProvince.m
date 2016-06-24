@@ -32,6 +32,7 @@
 - (NSString *)description{
     //创建一个键值数组存储键值: keys,准备下一步将keys里的数据传给当前类:HLProvince
     NSArray *keys = @[@"provinceName", @"cities"];
+    NSLog(@"我是liuhongli");
     
     //HLProvince (模型)调用键值(get),即现在,已将provinceName,cities 传给keys,最终传给了 HLProvince 类,在之后的代码中直接调用 HLProvince 类即可获得键值,达到传递模型中数据的目的
     return [self dictionaryWithValuesForKeys:keys].description;
