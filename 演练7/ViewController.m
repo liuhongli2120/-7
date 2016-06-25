@@ -61,10 +61,11 @@ static NSString *cellId = @"cellId";
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
     //获取模型
+    HLProvince *province = _provinceNameList[section];
     
     //返回数据类型
     
-    return 0;
+    return province.name;
 
 }
 
