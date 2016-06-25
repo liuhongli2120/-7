@@ -11,7 +11,7 @@
 @interface HLProvince : NSObject
 
 /**
- *省份名字
+ *省份名字,这里的省份的名字一定要和数据中的名字一致,因下面写入键值的时候是和数据中的一致的,这个地方如果不一直就会导致找不到减值的情况,在加载数据的时候就会导致程序崩溃
  */
 @property(nonatomic,copy)NSString *name;
 
