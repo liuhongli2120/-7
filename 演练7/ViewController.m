@@ -95,6 +95,31 @@ static NSString *cellId = @"cellId";
 }
 
 
+/**
+ *KVC 目前掌握的知识点小结
+ 
+ 字典转模型 setValuesForKeysWithDictionary
+ 使用自定的字典转换成模型
+ 使用细节：
+ 如果字典中有对象中不存在的 key，会崩溃
+ 如果对象属性中有字典中不存在的 key，没有反应
+ 本质上就是遍历字典 key，然后一个一个的设置数值
+ 模型转字典 dictionaryWithValuesForKeys
+ 
+ 使用指定的属性列表，将模型转换成字典
+ 注意：字典转模型和模型转字典，默认都只能转换一级模型，嵌套模型还需要增加代码
+ KVC 是一种间接设置和取值的技术
+ 
+ 设置数值
+ [self setValue:dict[@"name"] forKey:@"name"];
+ 取值
+ [_provinceList valueForKey:@"name"];
+ 如果发送消息的对象就是一个对象，则返回对象的属性值
+ 如果发送消息的对象是一个数组，返回 key 对应属性的数组
+ **/
+
+
+
 #pragma mark - loadData 加载数据
 //模型设置完毕之后加载数据
 - (void)loadPlistData{
