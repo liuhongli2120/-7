@@ -10,13 +10,13 @@
 
 @implementation HLProvince
 
-+ (instancetype)provinceNameWithDict:(NSDictionary *)dict{
++ (instancetype)nameWithDict:(NSDictionary *)dict{
     //创建并返回一个字典,将这个字典传给当前类:HLProvince 即self 进行返回
-    return [[self alloc]initWithDictionary:dict];
+    return [[self alloc] initWithDict:dict];
 
 }
 
-- (instancetype)initWithWithDict:(NSDictionary *)dict{
+- (instancetype)initWithDict:(NSDictionary *)dict{
     //初始化父类:[super init], 然后将初始化的父类赋给 当前类:HLProvince,即self
     self = [super init];
     //判断是否是当前类HLProvince,如果是当前类HLProvince,即得self,就进行下一步动作
@@ -32,7 +32,7 @@
 - (NSString *)description{
     //创建一个键值数组存储键值: keys,准备下一步将keys里的数据传给当前类:HLProvince
     NSArray *keys = @[@"provinceName", @"cities"];
-    NSLog(@"我是liuhongli");
+//    NSLog(@"我是liuhongli");
     
     //HLProvince (模型)调用键值(get),即现在,已将provinceName,cities 传给keys,最终传给了 HLProvince 类,在之后的代码中直接调用 HLProvince 类即可获得键值,达到传递模型中数据的目的
     return [self dictionaryWithValuesForKeys:keys].description;

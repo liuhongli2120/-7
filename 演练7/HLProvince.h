@@ -13,15 +13,16 @@
 /**
  *省份名字
  */
-@property(nonatomic,weak)NSString *provinceName;
+@property(nonatomic,copy)NSString *name;
 
 /**
  *城市数组的NSString泛型
  */
-@property(nonatomic,weak)NSArray <NSString *> *cities;
+@property(nonatomic,strong)NSArray <NSString *> *cities;
 
 //模型构造函数
-+ (instancetype)provinceNameWithDict:(NSDictionary *)dict;
-- (instancetype)initWithWithDict:(NSDictionary *)dict;
++ (instancetype)nameWithDict:(NSDictionary *)dict;
+
+- (instancetype)initWithDict:(NSDictionary *)dict;
 
 @end

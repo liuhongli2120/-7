@@ -18,23 +18,28 @@ static NSString *cellId = @"cellId";
 @end
 
 @implementation ViewController{
-    NSArray <NSDictionary *>*dict;
+    NSArray <HLProvince *> *_provinceNameList;
 
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self loadPlistData];
+    
     [self setupUI];
 }
 
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     //这个默认不实现,默认返回值是1;
-    return 3;
+    return _provinceNameList.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    
+    HLProvince *province = _provinceNameList[section];
+    
+    return province.cities.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -42,7 +47,11 @@ static NSString *cellId = @"cellId";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
     //设置cell
-//    cell.textLabel.text = 
+    //取出模型
+    HLProvince *province = _provinceNameList[indexPath.row];
+    //设置数据
+    cell.textLabel.text = province.name;
+    
     return cell;
 }
 
@@ -59,7 +68,16 @@ static NSString *cellId = @"cellId";
 
 //模型设置完毕之后加载数据
 - (void)loadPlistData{
+    NSURL *url = [[NSBundle mainBundle]URLForResource:@"cities.plist" withExtension:nil];
+    NSArray *list = [NSArray arrayWithContentsOfURL:url];
     
+    NSMutableArray *arrayM = [NSMutableArray array];
+    for (NSDictionary *dict in list) {
+        
+        [arrayM addObject:[[HLProvince alloc] initWithDict:dict]];
+        
+    }
+    _provinceNameList = arrayM.copy;
 
 }
 
@@ -76,6 +94,7 @@ static NSString *cellId = @"cellId";
     
     //设置数据源
     tv.dataSource = self;
+//    _provinceNameList = ;
 
 }
 
