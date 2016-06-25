@@ -32,6 +32,8 @@ static NSString *cellId = @"cellId";
     [self setupUI];
 }
 
+
+#pragma mark - UITableViewDataSource 设置数据源
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     //这个默认不实现,默认返回值是1; 返回类型是 NSInteger(整型的),这个方法是得到分组的'数量' (numberOfSectionsInTableView:), return 的时候一定返回组的数量
     return _provinceNameList.count;
@@ -73,18 +75,43 @@ static NSString *cellId = @"cellId";
 
 }
 
+#pragma mark - 增加省份索引
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    
+//    //索引数组的内容和 实际数据没有任何关系
+//    //有关系的是返回数组的下标和 section 数组的下标一一对应
+//    return @[@"a", @"c", @"b" ];
+    
+//    NSMutableArray *names = [NSMutableArray array];
+//    for (HLProvince *province in _provinceNameList) {
+//        [names addObject:province.name];
+//    }
+//    return names;
+    
+    // KVC cocoa大招
+    //用一个数组记录一下,后面直接返回 数组 names
+    NSArray *names = [_provinceNameList valueForKey:@"name"];
+    return names;
+}
 
+
+#pragma mark - loadData 加载数据
 //模型设置完毕之后加载数据
 - (void)loadPlistData{
-    NSURL *url = [[NSBundle mainBundle]URLForResource:@"cities.plist" withExtension:nil];
+    //从本地加载数据,用Bundle,Bundle专门用于加载本地数据,加载的数据资源是 'cities.plist', 字符串用 '@' 引起来.
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"cities.plist" withExtension:nil];
+    //将url中的数据传递给新创建的数组 list
     NSArray *list = [NSArray arrayWithContentsOfURL:url];
     
+    //创建一个数组,用来保存下面遍历的字典成员
     NSMutableArray *arrayM = [NSMutableArray array];
+    //便利字典
     for (NSDictionary *dict in list) {
-        
+        //将字典添加到可变数组 arrayM
         [arrayM addObject:[[HLProvince alloc] initWithDict:dict]];
         
     }
+    //copy之后,记录到成员变量,copy后就将数组由可变的转变为不可变的
     _provinceNameList = arrayM.copy;
 
 }
