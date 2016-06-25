@@ -47,10 +47,13 @@ static NSString *cellId = @"cellId";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
     //设置cell
-    //取出模型
-    HLProvince *province = _provinceNameList[indexPath.row];
+    //1>.取出模型
+    HLProvince *province = _provinceNameList[indexPath.section];
+    //2>.根据省份取出对应省份的城市名字
+    NSString *cityName = province.cities[indexPath.row];
+    
     //设置数据
-    cell.textLabel.text = province.name;
+    cell.textLabel.text = cityName;
     
     return cell;
 }
